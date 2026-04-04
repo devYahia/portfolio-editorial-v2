@@ -270,7 +270,7 @@
     background-size: 300% 300%;
     background-position: 100% 0%;
     /* Start at Top Right */
-    animation: shimmer-tr-bl 12s ease-in-out infinite;
+    animation: shimmer-tr-bl 5s ease-in-out infinite;
     pointer-events: none;
     z-index: 20;
   }
@@ -281,7 +281,7 @@
       /* Top Right */
     }
 
-    25% {
+    50% {
       background-position: 0% 100%;
       /* Bottom Left */
     }
@@ -303,7 +303,7 @@
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    animation: text-shimmer-animation 12s linear infinite;
+    animation: text-shimmer-animation 5s linear infinite;
   }
 
   @keyframes text-shimmer-animation {
@@ -311,10 +311,6 @@
     0%,
     50% {
       background-position: 100% center;
-    }
-
-    75% {
-      background-position: -100% center;
     }
 
     100% {
