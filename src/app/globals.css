@@ -255,36 +255,45 @@
   .shimmer-item::after {
     content: "";
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg,
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom left,
         transparent 0%,
-        transparent 35%,
-        oklch(1 0 0 / 15%) 45%,
+        transparent 40%,
+        oklch(1 0 0 / 10%) 45%,
         oklch(1 0 0 / 25%) 50%,
-        oklch(1 0 0 / 15%) 55%,
-        transparent 65%,
+        oklch(1 0 0 / 10%) 55%,
+        transparent 60%,
         transparent 100%);
-    transform: rotate(-45deg);
-    animation: shimmer-swipe 8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    background-size: 300% 300%;
+    background-position: 100% 0%;
+    /* Start at Top Right */
+    animation: shimmer-tr-bl 20s ease-in-out infinite;
     pointer-events: none;
+    z-index: 20;
   }
 
-  @keyframes shimmer-swipe {
+  @keyframes shimmer-tr-bl {
     0% {
-      transform: translate(-100%, -100%) rotate(-45deg);
+      background-position: 100% 0%;
+      /* Top Right */
     }
 
-    20%,
+    15% {
+      background-position: 0% 100%;
+      /* Bottom Left */
+    }
+
     100% {
-      transform: translate(100%, 100%) rotate(-45deg);
+      background-position: 0% 100%;
+      /* Wait here */
     }
   }
 
   .text-shimmer {
-    background: linear-gradient(90deg,
+    background: linear-gradient(120deg,
         oklch(1 0 0 / 100%) 0%,
         oklch(1 0 0 / 100%) 40%,
         oklch(1 0 0 / 40%) 50%,
@@ -294,15 +303,17 @@
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    animation: text-shimmer-animation 8s linear infinite;
+    animation: text-shimmer-animation 20s linear infinite;
   }
 
   @keyframes text-shimmer-animation {
-    0% {
+
+    0%,
+    50% {
       background-position: 100% center;
     }
 
-    15% {
+    65% {
       background-position: -100% center;
     }
 
