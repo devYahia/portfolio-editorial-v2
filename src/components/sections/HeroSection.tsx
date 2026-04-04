@@ -63,14 +63,12 @@ export function HeroSection() {
                     >
                         <motion.div
                             className="relative w-56 h-[19rem] sm:w-72 sm:h-[24rem] lg:w-[22rem] lg:h-[30rem]"
-                            animate={shouldReduceMotion ? {} : { y: [-8, 8, -8] }}
-                            transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
                         >
                             {/* Soft glow behind photo */}
                             <div className="absolute inset-0 bg-white/[0.03] blur-3xl scale-110" />
 
-                            {/* Sharp image frame */}
-                            <div className="relative w-full h-full overflow-hidden border border-white/10 glass-card">
+                            {/* Sharp image frame with shimmer overlay */}
+                            <div className="relative w-full h-full overflow-hidden border border-white/10 glass-card shimmer-item">
                                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 opacity-50" />
                                 <Image
                                     src="/images/yahia-bw.webp"
@@ -94,9 +92,9 @@ export function HeroSection() {
                         {/* Name in DM Serif Display */}
                         <motion.h1
                             {...fadeUp(0.05)}
-                            className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] leading-[1.1] tracking-[-0.02em] text-foreground"
+                            className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] leading-[1.1] tracking-[-0.02em]"
                         >
-                            Yahia Mohamed{" "}
+                            <span className="text-shimmer">Yahia Mohamed</span>{" "}
                             <span className="text-foreground/50">Zakaria</span>
                         </motion.h1>
 
