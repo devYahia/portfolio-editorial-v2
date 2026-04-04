@@ -1,0 +1,62 @@
+---
+title: "Building ASTRA: A Telegram Stars Exchange Platform"
+date: "2026-04-04"
+excerpt: "A deep dive into building a P2P exchange platform for Telegram Stars on the TON blockchain, covering escrow design, transaction verification, and the challenges of decentralized trading."
+tags: ["fintech", "blockchain", "python", "ton"]
+published: true
+---
+
+# Building ASTRA: A Telegram Stars Exchange Platform
+
+When Telegram introduced Stars as a digital currency for in-app purchases, I saw an opportunity to build a decentralized exchange platform that would let users trade Stars in a safe, automated way.
+
+## The Challenge
+
+Traditional P2P exchanges face a fundamental trust problem: how do you ensure both parties fulfill their obligations? In the crypto world, smart contracts solve this elegantly through escrow mechanisms. But building on the TON blockchain presented unique challenges.
+
+## Architecture Decisions
+
+The system needed three core components:
+
+1. **Telegram Bot Interface** -- for user interaction
+2. **FastAPI Backend** -- for business logic and transaction management
+3. **TON Integration** -- for on-chain escrow and verification
+
+### Why FastAPI?
+
+I chose FastAPI for several reasons:
+
+- **Async-first** -- critical for handling concurrent transactions
+- **Type safety** -- Pydantic models catch errors before they reach production
+- **Performance** -- one of the fastest Python frameworks available
+
+```python
+from fastapi import FastAPI, Depends
+from pydantic import BaseModel
+
+class TradeRequest(BaseModel):
+    amount: int
+    price_per_star: float
+    seller_wallet: str
+
+@app.post("/trades")
+async def create_trade(trade: TradeRequest):
+    # Validate seller has sufficient balance
+    balance = await ton_client.get_balance(trade.seller_wallet)
+    if balance < trade.amount:
+        raise HTTPException(400, "Insufficient balance")
+    
+    # Create escrow contract
+    escrow = await create_escrow(trade)
+    return {"escrow_id": escrow.id, "status": "pending"}
+```
+
+## Lessons Learned
+
+1. **Never trust the client** -- always verify on-chain state server-side
+2. **Idempotency matters** -- network issues can cause duplicate requests
+3. **Logging is not optional** -- when money is involved, every action must be traceable
+
+## What's Next
+
+I'm exploring cross-chain bridges to enable Stars trading across multiple blockchain networks. The goal is to make ASTRA the go-to platform for Telegram's growing digital economy.
