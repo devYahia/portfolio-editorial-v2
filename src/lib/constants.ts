@@ -6,7 +6,7 @@ export const siteConfig = {
     title: "Backend Software Engineer & Computer Engineering Student",
     description:
         "Yahia Mohamed Zakaria Youssef -- Backend Software Engineer specializing in APIs, web applications, and scalable systems. Computer & Communications Engineering student building production-grade backends with Node.js, TypeScript, Python, and PostgreSQL.",
-    url: "https://devyahia.dev",
+    url: "https://devyahia.me",
     ogImage: "/images/yahia-bw.webp",
     links: {
         github: "https://github.com/devYahia",
