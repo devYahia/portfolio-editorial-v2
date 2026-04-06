@@ -19,7 +19,7 @@ export function AboutSection() {
                     <FadeInWhenVisible delay={0.1} className="lg:col-span-2">
                         <div className="glass-card rounded-xl p-8">
                             <p className="text-muted-foreground leading-relaxed text-base">
-                                I&apos;m Yahia Mohamed Zakaria. I study Computer and Communications
+                                I&apos;m Yahia Mohamed Zakaria Youssef. I study Computer and Communications
                                 Engineering, and I build backends for a living. My work focuses on
                                 creating APIs, web applications, and the infrastructure that keeps
                                 them running -- from database design to deployment pipelines.

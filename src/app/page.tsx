@@ -6,10 +6,12 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export default function HomePage() {
   return (
     <>
+      <JsonLd type="website" />
       <ScrollProgress />
       <Navbar />
       <main>

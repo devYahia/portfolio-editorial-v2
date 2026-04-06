@@ -24,28 +24,50 @@ const dmSerifDisplay = DM_Serif_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.fullName} | ${siteConfig.name}`,
+    default: `${siteConfig.fullName} | Backend Software Engineer`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: [{ name: siteConfig.fullName, url: siteConfig.url }],
+  creator: siteConfig.fullName,
   metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: `${siteConfig.fullName} - Backend Developer`,
+    title: `${siteConfig.fullName} - Backend Software Engineer`,
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.fullName} - Backend Software Engineer Portfolio`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.fullName} - Backend Developer`,
+    title: `${siteConfig.fullName} - Backend Software Engineer`,
     description: siteConfig.description,
     creator: "@dev_yahia",
+    images: [siteConfig.ogImage],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

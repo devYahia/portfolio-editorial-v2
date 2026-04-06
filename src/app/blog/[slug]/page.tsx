@@ -6,6 +6,8 @@ import { useMDXComponents } from "@/components/blog/MdxComponents";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { siteConfig } from "@/lib/constants";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import Link from "next/link";
 import rehypePrettyCode from "rehype-pretty-code";
@@ -32,11 +34,16 @@ export async function generateMetadata({
     return {
         title: post.meta.title,
         description: post.meta.excerpt,
+        alternates: {
+            canonical: `/blog/${slug}`,
+        },
         openGraph: {
             title: post.meta.title,
             description: post.meta.excerpt,
             type: "article",
             publishedTime: post.meta.date,
+            authors: [siteConfig.fullName],
+            url: `${siteConfig.url}/blog/${slug}`,
         },
     };
 }
@@ -53,6 +60,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
     return (
         <>
+            <JsonLd
+                type="article"
+                article={{
+                    title: post.meta.title,
+                    description: post.meta.excerpt,
+                    datePublished: post.meta.date,
+                    url: `${siteConfig.url}/blog/${slug}`,
+                }}
+            />
             <ScrollProgress />
             <Navbar />
             <main className="min-h-screen pt-32 pb-24">
@@ -130,3 +146,4 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </>
     );
 }
+

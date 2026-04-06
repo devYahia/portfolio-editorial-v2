@@ -2,18 +2,33 @@
 
 export const siteConfig = {
     name: "devYahia",
-    fullName: "Yahia Mohamed Zakaria",
-    title: "Backend Developer & Computer Engineering Student",
+    fullName: "Yahia Mohamed Zakaria Youssef",
+    title: "Backend Software Engineer & Computer Engineering Student",
     description:
-        "Portfolio of Yahia Mohamed Zakaria -- a Computer Engineering student who builds robust backends, deploys real systems, and writes clean code.",
+        "Yahia Mohamed Zakaria Youssef -- Backend Software Engineer specializing in APIs, web applications, and scalable systems. Computer & Communications Engineering student building production-grade backends with Node.js, TypeScript, Python, and PostgreSQL.",
     url: "https://devyahia.dev",
-    ogImage: "/images/og-image.jpg",
+    ogImage: "/images/yahia-bw.webp",
     links: {
         github: "https://github.com/devYahia",
         linkedin: "https://www.linkedin.com/in/yahia-zakaria-911149265/",
         twitter: "https://x.com/dev_yahia",
         email: "mrzak051@gmail.com",
     },
+    keywords: [
+        "Yahia Mohamed Zakaria Youssef",
+        "Yahia Zakaria",
+        "devYahia",
+        "Backend Software Engineer",
+        "Backend Developer",
+        "Software Engineer Egypt",
+        "Node.js Developer",
+        "TypeScript Developer",
+        "API Developer",
+        "Full Stack Developer",
+        "Computer Engineering",
+        "freelance backend developer",
+        "web developer portfolio",
+    ],
 };
 
 export interface NavItem {
