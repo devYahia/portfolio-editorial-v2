@@ -45,6 +45,20 @@ export async function generateMetadata({
             publishedTime: post.meta.date,
             authors: [siteConfig.fullName],
             url: `${siteConfig.url}/blog/${slug}`,
+            images: [
+                {
+                    url: `${siteConfig.url}/blog/${slug}/opengraph-image`,
+                    width: 1200,
+                    height: 630,
+                    alt: post.meta.title,
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: post.meta.title,
+            description: post.meta.excerpt,
+            images: [`${siteConfig.url}/blog/${slug}/opengraph-image`],
         },
     };
 }
