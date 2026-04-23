@@ -32,7 +32,7 @@ export default async function Image(props: { params: Promise<{ slug: string }> }
                         justifyContent: "center",
                         width: "100%",
                         height: "100%",
-                        background: "#09090b",
+                        background: "#0a0a0a",
                         color: "#fff",
                         fontFamily: "Inter",
                         fontSize: 48,
@@ -64,52 +64,37 @@ export default async function Image(props: { params: Promise<{ slug: string }> }
                     display: "flex",
                     width: "100%",
                     height: "100%",
-                    background: "#09090b",
+                    background: "#0a0a0a",
                     fontFamily: "Inter",
                     position: "relative",
                 }}
             >
-                {/* Ambient gradient - top right */}
+                {/* Subtle warm gradient top-right corner */}
                 <div
                     style={{
                         display: "flex",
                         position: "absolute",
-                        top: "-200px",
-                        right: "-100px",
-                        width: "600px",
-                        height: "600px",
-                        borderRadius: "300px",
-                        background:
-                            "radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%)",
-                    }}
-                />
-
-                {/* Ambient gradient - bottom left */}
-                <div
-                    style={{
-                        display: "flex",
-                        position: "absolute",
-                        bottom: "-250px",
-                        left: "-150px",
+                        top: "-300px",
+                        right: "-200px",
                         width: "700px",
                         height: "700px",
                         borderRadius: "350px",
                         background:
-                            "radial-gradient(circle, rgba(56,189,248,0.12) 0%, transparent 70%)",
+                            "radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%)",
                     }}
                 />
 
-                {/* Left accent bar */}
+                {/* Left accent bar - pure white/gray gradient */}
                 <div
                     style={{
                         display: "flex",
                         position: "absolute",
                         left: "0",
                         top: "0",
-                        width: "4px",
+                        width: "3px",
                         height: "100%",
                         background:
-                            "linear-gradient(180deg, transparent 0%, #6366f1 30%, #38bdf8 70%, transparent 100%)",
+                            "linear-gradient(180deg, transparent 10%, #ffffff 40%, #666666 70%, transparent 95%)",
                     }}
                 />
 
@@ -134,6 +119,7 @@ export default async function Image(props: { params: Promise<{ slug: string }> }
                             width: "100%",
                         }}
                     >
+                        {/* Brand: favicon-style monogram */}
                         <div
                             style={{
                                 display: "flex",
@@ -141,20 +127,18 @@ export default async function Image(props: { params: Promise<{ slug: string }> }
                                 gap: "14px",
                             }}
                         >
-                            {/* Brand icon */}
                             <div
                                 style={{
                                     display: "flex",
-                                    width: "42px",
-                                    height: "42px",
-                                    borderRadius: "10px",
-                                    background:
-                                        "linear-gradient(135deg, #6366f1 0%, #38bdf8 100%)",
+                                    width: "40px",
+                                    height: "40px",
+                                    borderRadius: "8px",
+                                    background: "#ffffff",
                                     alignItems: "center",
                                     justifyContent: "center",
                                     fontSize: 18,
                                     fontWeight: 700,
-                                    color: "#fff",
+                                    color: "#0a0a0a",
                                 }}
                             >
                                 dY
@@ -163,7 +147,7 @@ export default async function Image(props: { params: Promise<{ slug: string }> }
                                 style={{
                                     fontSize: 20,
                                     fontWeight: 600,
-                                    color: "#71717a",
+                                    color: "#737373",
                                     letterSpacing: "-0.02em",
                                 }}
                             >
@@ -171,17 +155,17 @@ export default async function Image(props: { params: Promise<{ slug: string }> }
                             </span>
                         </div>
 
-                        {/* Tag pill */}
+                        {/* Tag pill - monochrome */}
                         <div
                             style={{
                                 display: "flex",
-                                padding: "8px 20px",
+                                padding: "7px 18px",
                                 borderRadius: "999px",
-                                border: "1px solid rgba(99,102,241,0.35)",
-                                background: "rgba(99,102,241,0.08)",
+                                border: "1px solid rgba(255,255,255,0.15)",
+                                background: "rgba(255,255,255,0.05)",
                                 fontSize: 13,
                                 fontWeight: 600,
-                                color: "#a5b4fc",
+                                color: "#a3a3a3",
                                 letterSpacing: "0.1em",
                             }}
                         >
@@ -194,18 +178,18 @@ export default async function Image(props: { params: Promise<{ slug: string }> }
                         style={{
                             display: "flex",
                             flexDirection: "column",
-                            gap: "16px",
+                            gap: "18px",
                             maxWidth: "950px",
                         }}
                     >
                         <div
                             style={{
                                 display: "flex",
-                                fontSize: 50,
+                                fontSize: 52,
                                 fontWeight: 700,
                                 color: "#fafafa",
-                                lineHeight: 1.15,
-                                letterSpacing: "-0.03em",
+                                lineHeight: 1.12,
+                                letterSpacing: "-0.035em",
                             }}
                         >
                             {post.meta.title}
@@ -213,8 +197,8 @@ export default async function Image(props: { params: Promise<{ slug: string }> }
                         <div
                             style={{
                                 display: "flex",
-                                fontSize: 21,
-                                color: "#52525b",
+                                fontSize: 20,
+                                color: "#525252",
                                 lineHeight: 1.5,
                                 letterSpacing: "-0.01em",
                             }}
@@ -232,7 +216,7 @@ export default async function Image(props: { params: Promise<{ slug: string }> }
                             justifyContent: "space-between",
                             alignItems: "center",
                             width: "100%",
-                            borderTop: "1px solid rgba(255,255,255,0.06)",
+                            borderTop: "1px solid rgba(255,255,255,0.08)",
                             paddingTop: "22px",
                         }}
                     >
@@ -243,6 +227,7 @@ export default async function Image(props: { params: Promise<{ slug: string }> }
                                 gap: "14px",
                             }}
                         >
+                            {/* Profile photo */}
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 src="https://github.com/devYahia.png"
@@ -251,7 +236,7 @@ export default async function Image(props: { params: Promise<{ slug: string }> }
                                 height={42}
                                 style={{
                                     borderRadius: "21px",
-                                    border: "2px solid rgba(255,255,255,0.1)",
+                                    border: "2px solid rgba(255,255,255,0.12)",
                                 }}
                             />
                             <div
@@ -265,7 +250,7 @@ export default async function Image(props: { params: Promise<{ slug: string }> }
                                     style={{
                                         fontSize: 17,
                                         fontWeight: 600,
-                                        color: "#d4d4d8",
+                                        color: "#d4d4d4",
                                         letterSpacing: "-0.01em",
                                     }}
                                 >
@@ -274,7 +259,7 @@ export default async function Image(props: { params: Promise<{ slug: string }> }
                                 <span
                                     style={{
                                         fontSize: 13,
-                                        color: "#3f3f46",
+                                        color: "#525252",
                                         fontWeight: 500,
                                     }}
                                 >
@@ -286,7 +271,7 @@ export default async function Image(props: { params: Promise<{ slug: string }> }
                         <span
                             style={{
                                 fontSize: 15,
-                                color: "#3f3f46",
+                                color: "#525252",
                                 fontWeight: 500,
                                 letterSpacing: "-0.01em",
                             }}
