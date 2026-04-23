@@ -12,7 +12,7 @@ export const siteConfig = {
         github: "https://github.com/devYahia",
         linkedin: "https://www.linkedin.com/in/yahia-zakaria-911149265/",
         twitter: "https://x.com/dev_yahia",
-        email: "mrzak051@gmail.com",
+        email: "devyahiazakaria@gmail.com",
     },
     keywords: [
         "Yahia Mohamed Zakaria Youssef",
