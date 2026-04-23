@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getPostBySlug, getAllSlugs } from "@/lib/blog";
+import { getPostBySlug, getPostBySlugAndLang, hasArabicVersion, getAllSlugs } from "@/lib/blog";
 import { useMDXComponents } from "@/components/blog/MdxComponents";
+import { BlogPostClient } from "@/components/blog/BlogPostClient";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
@@ -48,6 +49,20 @@ export async function generateMetadata({
     };
 }
 
+const mdxOptions = {
+    mdxOptions: {
+        rehypePlugins: [
+            [
+                rehypePrettyCode,
+                {
+                    theme: "github-dark-default",
+                    keepBackground: true,
+                },
+            ],
+        ],
+    },
+};
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const { slug } = await params;
     const post = getPostBySlug(slug);
@@ -57,6 +72,31 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     }
 
     const components = useMDXComponents();
+    const hasArabic = hasArabicVersion(slug);
+
+    // Pre-render English content
+    const englishRendered = (
+        <MDXRemote
+            source={post.content}
+            components={components}
+            options={mdxOptions as Parameters<typeof MDXRemote>[0]["options"]}
+        />
+    );
+
+    // Pre-render Arabic content if available
+    let arabicRendered = null;
+    if (hasArabic) {
+        const arPost = getPostBySlugAndLang(slug, "ar");
+        if (arPost) {
+            arabicRendered = (
+                <MDXRemote
+                    source={arPost.content}
+                    components={components}
+                    options={mdxOptions as Parameters<typeof MDXRemote>[0]["options"]}
+                />
+            );
+        }
+    }
 
     return (
         <>
@@ -120,30 +160,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         <div className="line-accent mt-8" />
                     </header>
 
-                    {/* MDX content */}
-                    <div className="prose-custom">
-                        <MDXRemote
-                            source={post.content}
-                            components={components}
-                            options={{
-                                mdxOptions: {
-                                    rehypePlugins: [
-                                        [
-                                            rehypePrettyCode,
-                                            {
-                                                theme: "github-dark-default",
-                                                keepBackground: true,
-                                            },
-                                        ],
-                                    ],
-                                },
-                            }}
-                        />
-                    </div>
+                    {/* MDX content with language toggle */}
+                    <BlogPostClient
+                        slug={slug}
+                        hasArabic={hasArabic}
+                        englishRendered={englishRendered}
+                        arabicRendered={arabicRendered}
+                    />
                 </article>
             </main>
             <Footer />
         </>
     );
 }
-

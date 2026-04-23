@@ -12,6 +12,7 @@ export interface BlogPostMeta {
     published: boolean;
     slug: string;
     readingTime: string;
+    lang?: string;
 }
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
@@ -27,7 +28,7 @@ export function getAllPosts(): BlogPostMeta[] {
 
     const files = fs
         .readdirSync(BLOG_DIR)
-        .filter((file) => file.endsWith(".mdx"));
+        .filter((file) => file.endsWith(".mdx") && !file.includes(".ar.mdx"));
 
     const posts = files
         .map((file) => {
@@ -83,11 +84,54 @@ export function getPostBySlug(slug: string) {
     };
 }
 
+/**
+ * Get a post in a specific language.
+ * Falls back to English if the requested language is not available.
+ */
+export function getPostBySlugAndLang(slug: string, lang: string) {
+    ensureBlogDir();
+
+    if (lang === "ar") {
+        const arPath = path.join(BLOG_DIR, `${slug}.ar.mdx`);
+        if (fs.existsSync(arPath)) {
+            const fileContents = fs.readFileSync(arPath, "utf8");
+            const { data, content } = matter(fileContents);
+
+            return {
+                meta: {
+                    title: data.title || "Untitled",
+                    date: data.date || new Date().toISOString(),
+                    excerpt: data.excerpt || "",
+                    tags: data.tags || [],
+                    coverImage: data.coverImage || undefined,
+                    published: data.published ?? false,
+                    slug,
+                    readingTime: readingTime(content).text,
+                    lang: "ar",
+                } as BlogPostMeta,
+                content,
+            };
+        }
+    }
+
+    // Fallback to English
+    return getPostBySlug(slug);
+}
+
+/**
+ * Check if an Arabic version exists for a given slug.
+ */
+export function hasArabicVersion(slug: string): boolean {
+    ensureBlogDir();
+    const arPath = path.join(BLOG_DIR, `${slug}.ar.mdx`);
+    return fs.existsSync(arPath);
+}
+
 export function getAllSlugs(): string[] {
     ensureBlogDir();
 
     return fs
         .readdirSync(BLOG_DIR)
-        .filter((file) => file.endsWith(".mdx"))
+        .filter((file) => file.endsWith(".mdx") && !file.includes(".ar.mdx"))
         .map((file) => file.replace(/\.mdx$/, ""));
 }
