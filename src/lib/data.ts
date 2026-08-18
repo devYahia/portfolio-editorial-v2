@@ -190,10 +190,13 @@ export const skills: Skill[] = [
     { name: "MongoDB", icon: SiMongodb, category: "backend" },
     { name: "Redis", icon: SiRedis, category: "backend" },
     { name: "Prisma", icon: SiPrisma, category: "backend" },
+    { name: "Supabase", icon: SiSupabase, category: "backend" },
     { name: "Docker", icon: SiDocker, category: "tools" },
     { name: "GCP", icon: SiGooglecloud, category: "tools" },
     { name: "Git", icon: SiGit, category: "tools" },
     { name: "AWS", icon: Cloud, category: "tools" },
+    { name: "Vercel", icon: SiVercel, category: "tools" },
+    { name: "TON", icon: Blocks, category: "blockchain" },
 ];
 
 // ============================================

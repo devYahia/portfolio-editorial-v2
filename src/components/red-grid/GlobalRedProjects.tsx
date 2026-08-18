@@ -12,9 +12,9 @@ export default function GlobalRedProjects() {
         
         {/* Section Header */}
         <div className="mb-16 text-center">
-          <p className="text-white/40 text-xs font-bold tracking-[0.3em] uppercase mb-4">Experience</p>
+          <p className="text-white/40 text-xs font-bold tracking-[0.3em] uppercase mb-4">Selected Work</p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-medium text-white leading-[1.1] tracking-tight">
-            Professional<br/>milestones & impact
+            Projects shipped<br/>in production
           </h2>
         </div>
 

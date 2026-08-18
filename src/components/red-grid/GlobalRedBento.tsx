@@ -46,12 +46,18 @@ export default function GlobalRedBento() {
                 Rather than being limited to a single domain, my core strength lies in rapidly adapting to diverse technical environments and translating abstract business requirements into robust system architectures. Whether it's optimizing database queries, orchestrating containerized infrastructure, or building secure APIs, my focus is always on delivering high-performance, maintainable software from the ground up.
               </p>
               
-              <div className="mt-10">
-                <div className="border-l-[3px] border-red-500/50 pl-6 py-1">
-                  <p className="text-white/80 text-lg md:text-xl leading-relaxed font-light">
-                    Finalizing my <span className="text-white font-medium">B.Sc. in Communication and Computer Engineering</span>, my approach is rooted in a deep understanding of low-level systems, algorithms, and network protocols, ensuring that every layer of the stack is optimized for maximum efficiency.
-                  </p>
-                </div>
+              <div className="mt-10 rounded-2xl bg-white/[0.03] border border-white/5 px-6 py-5">
+                <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-white/35 mb-3">
+                  Education
+                </p>
+                <p className="text-white/75 text-base md:text-lg leading-relaxed font-light">
+                  Finalizing my{" "}
+                  <span className="text-white font-medium">
+                    B.Sc. in Communication and Computer Engineering
+                  </span>
+                  . My work is grounded in systems thinking — algorithms, network protocols, and
+                  low-level behavior — so the solutions I ship stay fast and reliable under real load.
+                </p>
               </div>
             </div>
           </motion.div>
@@ -69,20 +75,35 @@ export default function GlobalRedBento() {
               
               <h3 className="text-2xl font-serif text-white mb-6 relative z-10">Technical Arsenal</h3>
               
-              <div className="space-y-5 relative z-10">
+              <div className="space-y-4 relative z-10">
                 <div>
                   <p className="text-white/40 text-xs font-bold tracking-widest uppercase mb-2">Languages</p>
-                  <p className="text-white/80 font-medium tracking-wide">TypeScript, Node.js, Python, SQL</p>
+                  <p className="text-white/80 font-medium tracking-wide leading-relaxed">TypeScript, Python, JavaScript, SQL, Dart</p>
                 </div>
                 <div className="w-full h-[1px] bg-white/5" />
                 <div>
                   <p className="text-white/40 text-xs font-bold tracking-widest uppercase mb-2">Backend & APIs</p>
-                  <p className="text-white/80 font-medium tracking-wide">NestJS, Express, FastAPI, Prisma, BullMQ</p>
+                  <p className="text-white/80 font-medium tracking-wide leading-relaxed">NestJS, Express, FastAPI, Prisma, BullMQ, REST, Webhooks</p>
                 </div>
                 <div className="w-full h-[1px] bg-white/5" />
                 <div>
-                  <p className="text-white/40 text-xs font-bold tracking-widest uppercase mb-2">Data & Infra</p>
-                  <p className="text-white/80 font-medium tracking-wide">PostgreSQL, Redis, Docker, GCP, AWS S3, Coolify</p>
+                  <p className="text-white/40 text-xs font-bold tracking-widest uppercase mb-2">Data & Storage</p>
+                  <p className="text-white/80 font-medium tracking-wide leading-relaxed">PostgreSQL, MongoDB, Redis, Supabase, Cloudflare R2, AWS S3</p>
+                </div>
+                <div className="w-full h-[1px] bg-white/5" />
+                <div>
+                  <p className="text-white/40 text-xs font-bold tracking-widest uppercase mb-2">Cloud & DevOps</p>
+                  <p className="text-white/80 font-medium tracking-wide leading-relaxed">Docker, GCP, Coolify, Vercel, Nginx, GHCR, Caddy</p>
+                </div>
+                <div className="w-full h-[1px] bg-white/5" />
+                <div>
+                  <p className="text-white/40 text-xs font-bold tracking-widest uppercase mb-2">Blockchain & Fintech</p>
+                  <p className="text-white/80 font-medium tracking-wide leading-relaxed">TON SDK, Telegram Stars, USDT Jettons, wallet integrations</p>
+                </div>
+                <div className="w-full h-[1px] bg-white/5" />
+                <div>
+                  <p className="text-white/40 text-xs font-bold tracking-widest uppercase mb-2">AI, Frontend & More</p>
+                  <p className="text-white/80 font-medium tracking-wide leading-relaxed">Gemini AI, Next.js, React, Unity, Flutter, Telegram Bots & Mini Apps</p>
                 </div>
               </div>
             </motion.div>
