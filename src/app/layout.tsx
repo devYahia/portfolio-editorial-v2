@@ -34,23 +34,26 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   alternates: {
     canonical: "/",
+    types: {
+      "application/rss+xml": `${siteConfig.url}/feed.xml`,
+    },
   },
-  openGraph: {
-    title: `${siteConfig.fullName} - Backend Software Engineer`,
-    description: siteConfig.description,
-    url: siteConfig.url,
-    siteName: siteConfig.name,
-    locale: "en_US",
-    type: "website",
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: `${siteConfig.fullName} - Backend Software Engineer Portfolio`,
-      },
-    ],
-  },
+    openGraph: {
+        title: `${siteConfig.fullName} - Backend Software Engineer`,
+        description: siteConfig.description,
+        url: siteConfig.url,
+        siteName: siteConfig.name,
+        locale: siteConfig.locale,
+        type: "website",
+        images: [
+            {
+                url: siteConfig.ogImage,
+                width: 1200,
+                height: 630,
+                alt: `${siteConfig.fullName} - Backend Software Engineer Portfolio`,
+            },
+        ],
+    },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.fullName} - Backend Software Engineer`,

@@ -4,14 +4,28 @@ import { BlogCard } from "@/components/blog/BlogCard";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
-    title: "Blog",
-    description: `Technical articles and project deep-dives by ${siteConfig.fullName}.`,
+    title: "Blog | Technical Articles and Project Deep-Dives",
+    description: `Technical articles, fintech retrospectives, and production engineering notes by ${siteConfig.fullName}.`,
+    alternates: {
+        canonical: "/blog",
+    },
     openGraph: {
-        title: `Blog | ${siteConfig.name}`,
+        title: `Blog | ${siteConfig.fullName}`,
         description: `Technical articles and project deep-dives by ${siteConfig.fullName}.`,
+        url: `${siteConfig.url}/blog`,
+        type: "website",
+        images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: `Blog | ${siteConfig.fullName}`,
+        description: `Technical articles and project deep-dives by ${siteConfig.fullName}.`,
+        creator: "@YahiaSWE",
+        images: ["/opengraph-image"],
     },
 };
 
@@ -20,11 +34,11 @@ export default function BlogPage() {
 
     return (
         <>
+            <JsonLd type="blog" />
             <ScrollProgress />
             <Navbar />
             <main className="min-h-screen pt-32 pb-24">
                 <div className="mx-auto max-w-4xl px-6">
-                    {/* Header */}
                     <div className="mb-12">
                         <p className="font-mono text-sm text-muted-foreground tracking-widest uppercase mb-3">
                             Blog
@@ -38,7 +52,6 @@ export default function BlogPage() {
                         </p>
                     </div>
 
-                    {/* Posts grid */}
                     {posts.length > 0 ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {posts.map((post) => (

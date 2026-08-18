@@ -121,6 +121,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     description: post.meta.excerpt,
                     datePublished: post.meta.date,
                     url: `${siteConfig.url}/blog/${slug}`,
+                    image: post.meta.coverImage || `/blog/${slug}/opengraph-image`,
+                    tags: post.meta.tags,
                 }}
             />
             <ScrollProgress />
