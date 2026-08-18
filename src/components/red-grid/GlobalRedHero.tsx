@@ -24,25 +24,24 @@ export default function GlobalRedHero() {
 
 
       {/* 3. Main Content Container */}
-      <div className="relative z-30 w-full max-w-[90rem] px-6 mx-auto flex flex-col items-start justify-center pt-32 lg:pt-24 flex-1 pointer-events-none">
+      <div className="relative z-30 w-full max-w-[90rem] px-4 sm:px-6 mx-auto flex flex-col items-start justify-center pt-28 sm:pt-32 lg:pt-24 flex-1 pointer-events-none">
         
-        {/* Left Column: Typography */}
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-2xl xl:max-w-3xl z-40 pointer-events-auto"
+          className="max-w-xl sm:max-w-2xl xl:max-w-3xl z-40 pointer-events-auto"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans font-medium text-white/80 leading-[1.05] tracking-tight mb-12">
+          <h1 className="text-[2rem] leading-[1.08] sm:text-5xl md:text-6xl lg:text-7xl font-sans font-medium text-white/80 tracking-tight mb-8 sm:mb-12">
             Building <span className="font-bold text-white">intelligent</span><br/>
             software solutions &<br/>
             scalable <span className="font-bold text-white">systems</span>
           </h1>
-          <div className="flex flex-wrap gap-4">
-            <a href="mailto:mrzak051@gmail.com" className="bg-white text-black font-semibold px-10 py-4 rounded-xl hover:bg-neutral-200 transition-colors text-sm tracking-wide inline-flex items-center justify-center">
-              Let's Talk
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 w-full sm:w-auto">
+            <a href="mailto:mrzak051@gmail.com" className="bg-white text-black font-semibold px-6 sm:px-10 py-3.5 sm:py-4 rounded-xl hover:bg-neutral-200 transition-colors text-sm tracking-wide inline-flex items-center justify-center w-full sm:w-auto">
+              Let&apos;s Talk
             </a>
-            <a href="/Yahia-Zakaria-Resume.pdf" download="Yahia-Zakaria-Resume.pdf" className="bg-[#111111]/50 text-white border border-white/20 font-semibold px-10 py-4 rounded-xl hover:bg-white/5 transition-colors flex items-center justify-center gap-3 text-sm tracking-wide backdrop-blur-sm">
+            <a href="/Yahia-Zakaria-Resume.pdf" download="Yahia-Zakaria-Resume.pdf" className="bg-[#111111]/50 text-white border border-white/20 font-semibold px-6 sm:px-10 py-3.5 sm:py-4 rounded-xl hover:bg-white/5 transition-colors flex items-center justify-center gap-3 text-sm tracking-wide backdrop-blur-sm w-full sm:w-auto">
               Download Resume
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 16L12 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -59,7 +58,7 @@ export default function GlobalRedHero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
-        className="absolute bottom-0 right-[-10%] lg:right-0 w-[95vw] lg:w-[65vw] h-[75vh] lg:h-[90vh] max-w-[1200px] pointer-events-none z-20 flex items-end justify-end"
+        className="absolute bottom-0 right-[-5%] sm:right-[-10%] lg:right-0 w-[88vw] sm:w-[95vw] lg:w-[65vw] h-[55vh] sm:h-[65vh] lg:h-[90vh] max-w-[1200px] pointer-events-none z-20 flex items-end justify-end"
       >
         <div className="relative w-full h-full" style={{ filter: 'drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.15))' }}>
           <Image 
