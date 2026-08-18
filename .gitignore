@@ -39,3 +39,29 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# resume
+/resume/
+
+# local raw assets (personal photos, duplicates — not for production)
+/resources/
+/firstWord.png
+
+# unused / duplicate public assets
+/public/images/blackYahia.png
+/public/images/hero-character.png
+/public/images/yahia-cutout.png
+/public/images/HMyVgJTWgAAT93G.jpeg
+/public/images/images.jpeg
+/public/images/rwctf_comparison_section.png
+/public/images/rwctf_scenarios_section.png
+/public/images/stars-converter/bot-interface.jpg
+
+# experimental layouts not shipped in production
+/src/app/detective-board/
+/src/components/detective-board/
+/src/components/cinematic-scroll/
+/src/components/editorial-noir/
+/src/components/vortex-hero/
+/src/components/red-grid/RedGridHero.tsx
+/src/components/red-grid/RedGridBento.tsx

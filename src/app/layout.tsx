@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.fullName} - Backend Software Engineer`,
     description: siteConfig.description,
-    creator: "@dev_yahia",
+    creator: "@YahiaSWE",
     images: [siteConfig.ogImage],
   },
   robots: {

@@ -1,166 +1,86 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import { navItems, siteConfig } from "@/lib/constants";
-import { cn } from "@/lib/utils";
+'use client';
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import { useState } from 'react';
+import Link from 'next/link';
+import { navItems } from '@/lib/constants';
 
 export function Navbar() {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileOpen, setIsMobileOpen] = useState(false);
-    const [activeSection, setActiveSection] = useState("");
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
+  // Hide nav on scroll down, show on scroll up
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() || 0;
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
 
-            // Active section detection
-            const sections = navItems
-                .filter((item) => item.href.startsWith("#"))
-                .map((item) => item.href.slice(1));
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const hashIndex = href.indexOf('#');
+    if (hashIndex === -1) return;
 
-            for (const section of sections.reverse()) {
-                const el = document.getElementById(section);
-                if (el) {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top <= 120) {
-                        setActiveSection(section);
-                        break;
-                    }
-                }
-            }
-        };
+    const path = href.slice(0, hashIndex) || '/';
+    const hash = href.slice(hashIndex + 1);
+    const onSamePage =
+      window.location.pathname === path ||
+      (path === '/' && window.location.pathname === '/');
 
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    if (onSamePage && hash) {
+      e.preventDefault();
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
-    const handleNavClick = (href: string) => {
-        setIsMobileOpen(false);
-        if (href.startsWith("#")) {
-            const el = document.getElementById(href.slice(1));
-            if (el) {
-                el.scrollIntoView({ behavior: "smooth" });
-            }
-        }
-    };
+  return (
+    <motion.header
+      variants={{
+        visible: { y: 0, opacity: 1 },
+        hidden: { y: "-100%", opacity: 0 },
+      }}
+      initial="visible"
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      className="fixed top-6 left-0 right-0 z-50 flex justify-center w-full px-6"
+    >
+      <nav className="w-full max-w-[90rem] flex justify-between items-center">
+        
+        {/* Logo / Name - Liquid Glass */}
+        <Link href="/" className="flex items-center gap-3 px-2 py-1.5 bg-black/40 border border-white/10 rounded-full backdrop-blur-md group hover:bg-black/60 transition-colors">
+          <div className="w-8 h-8 bg-white text-black font-bold flex items-center justify-center rounded-full text-xs">
+            YZ
+          </div>
+          <span className="text-white font-medium pr-4 text-sm tracking-wide">Yahia Zakaria</span>
+        </Link>
+        
+        {/* Desktop Nav Links - Liquid Glass */}
+        <div className="hidden md:flex gap-10 text-sm font-medium text-white/70 bg-black/40 border border-white/10 px-10 py-3.5 rounded-full backdrop-blur-md tracking-wide">
+          {navItems.map((item) => (
+            <Link 
+              key={item.label}
+              href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
+              className="hover:text-white transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
 
-    return (
-        <motion.header
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] as const }}
-            className={cn(
-                "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-                isScrolled ? "glass-navbar" : "bg-transparent"
-            )}
+        {/* CTA Button */}
+        <a 
+          href="mailto:mrzak051@gmail.com" 
+          className="bg-white text-black font-semibold px-8 py-3 rounded-full hover:bg-neutral-200 transition-colors text-sm shadow-lg shadow-white/10"
         >
-            <nav className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-                {/* Logo */}
-                <Link
-                    href="/"
-                    className="font-mono text-lg font-bold tracking-tight text-foreground hover:text-foreground/80 transition-colors"
-                >
-                    {siteConfig.name}
-                    <span className="text-foreground/30">.</span>
-                </Link>
-
-                {/* Desktop Navigation */}
-                <ul className="hidden md:flex items-center gap-1">
-                    {navItems.map((item) => {
-                        const isActive =
-                            item.href.startsWith("#") &&
-                            activeSection === item.href.slice(1);
-                        return (
-                            <li key={item.href}>
-                                {item.href.startsWith("/") ? (
-                                    <Link
-                                        href={item.href}
-                                        className="relative px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                                    >
-                                        {item.label}
-                                    </Link>
-                                ) : (
-                                    <button
-                                        onClick={() => handleNavClick(item.href)}
-                                        className={cn(
-                                            "relative px-4 py-2 text-sm transition-colors",
-                                            isActive
-                                                ? "text-foreground"
-                                                : "text-muted-foreground hover:text-foreground"
-                                        )}
-                                    >
-                                        {item.label}
-                                        {isActive && (
-                                            <motion.span
-                                                layoutId="activeNav"
-                                                className="absolute bottom-0 left-2 right-2 h-px bg-foreground/50"
-                                                transition={{
-                                                    type: "spring",
-                                                    stiffness: 400,
-                                                    damping: 30,
-                                                }}
-                                            />
-                                        )}
-                                    </button>
-                                )}
-                            </li>
-                        );
-                    })}
-                </ul>
-
-                {/* Mobile Toggle */}
-                <button
-                    onClick={() => setIsMobileOpen(!isMobileOpen)}
-                    className="md:hidden p-2 text-foreground/70 hover:text-foreground transition-colors"
-                    aria-label={isMobileOpen ? "Close menu" : "Open menu"}
-                >
-                    {isMobileOpen ? <X size={20} /> : <Menu size={20} />}
-                </button>
-            </nav>
-
-            {/* Mobile Menu */}
-            <AnimatePresence>
-                {isMobileOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
-                        className="md:hidden overflow-hidden glass-heavy"
-                    >
-                        <ul className="px-6 py-4 space-y-1">
-                            {navItems.map((item, i) => (
-                                <motion.li
-                                    key={item.href}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: i * 0.05 }}
-                                >
-                                    {item.href.startsWith("/") ? (
-                                        <Link
-                                            href={item.href}
-                                            onClick={() => setIsMobileOpen(false)}
-                                            className="block py-3 text-sm text-muted-foreground hover:text-foreground transition-colors border-b border-border/50"
-                                        >
-                                            {item.label}
-                                        </Link>
-                                    ) : (
-                                        <button
-                                            onClick={() => handleNavClick(item.href)}
-                                            className="block w-full text-left py-3 text-sm text-muted-foreground hover:text-foreground transition-colors border-b border-border/50"
-                                        >
-                                            {item.label}
-                                        </button>
-                                    )}
-                                </motion.li>
-                            ))}
-                        </ul>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </motion.header>
-    );
+          Let's Talk
+        </a>
+        
+      </nav>
+    </motion.header>
+  );
 }

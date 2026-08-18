@@ -73,7 +73,7 @@ export function ProjectsSection() {
 
                                 {/* Description */}
                                 <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                                    {project.description}
+                                    {project.shortDescription}
                                 </p>
 
                                 {/* Tech stack */}

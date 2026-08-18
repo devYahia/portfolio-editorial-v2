@@ -3,15 +3,15 @@
 export const siteConfig = {
     name: "devYahia",
     fullName: "Yahia Mohamed Zakaria Youssef",
-    title: "Backend Software Engineer & Computer Engineering Student",
+    title: "Backend-Heavy Software Engineer",
     description:
-        "Yahia Mohamed Zakaria Youssef -- Backend Software Engineer specializing in APIs, web applications, and scalable systems. Computer & Communications Engineering student building production-grade backends with Node.js, TypeScript, Python, and PostgreSQL.",
+        "Yahia Mohamed Zakaria Youssef -- Software Engineer specializing in distributed architectures, data-intensive applications, and resilient cloud infrastructure using Node.js, TypeScript, Python, and PostgreSQL.",
     url: "https://devyahia.me",
     ogImage: "/images/yahia-bw.webp",
     links: {
         github: "https://github.com/devYahia",
         linkedin: "https://www.linkedin.com/in/yahia-zakaria-911149265/",
-        twitter: "https://x.com/dev_yahia",
+        twitter: "https://x.com/YahiaSWE",
         email: "devyahiazakaria@gmail.com",
     },
     keywords: [
@@ -37,8 +37,9 @@ export interface NavItem {
 }
 
 export const navItems: NavItem[] = [
-    { label: "Portfolio", href: "/" },
-    { label: "Blog", href: "/blog" },
+    { label: "Home", href: "/" },
+    { label: "About", href: "/#why-partner" },
+    { label: "Projects", href: "/#projects" },
 ];
 
 export const skillCategories: Record<string, string> = {
