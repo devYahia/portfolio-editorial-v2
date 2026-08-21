@@ -9,7 +9,7 @@ export function Footer() {
     return (
         <footer className="border-t border-border/50 bg-background/50">
             <div className="mx-auto max-w-6xl px-6 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                     <div>
                         <Link
                             href="/"
@@ -57,30 +57,65 @@ export function Footer() {
 
                     <div>
                         <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
-                            Explore
+                            Trust & Pages
                         </p>
                         <ul className="space-y-2">
                             <li>
-                                <Link href="/#why-partner" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                                    About
+                                <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                                    About Yahia
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/#projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                                    Projects
+                                <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                                    Contact & Hire
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                                    Privacy Policy
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                                    Blog
+                                    Blog & Writings
                                 </Link>
                             </li>
                             <li>
                                 <a
                                     href={siteConfig.links.resume}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                                 >
-                                    Resume
+                                    Resume (PDF)
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
+                            AI & Machine Data
+                        </p>
+                        <ul className="space-y-2">
+                            <li>
+                                <a href="/llms.txt" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-mono text-xs">
+                                    /llms.txt
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/llms-full.txt" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-mono text-xs">
+                                    /llms-full.txt
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/agent-instructions.txt" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-mono text-xs">
+                                    /agent-instructions.txt
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/sitemap.xml" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-mono text-xs">
+                                    /sitemap.xml
                                 </a>
                             </li>
                         </ul>
@@ -89,9 +124,14 @@ export function Footer() {
 
                 <div className="line-accent my-6" />
 
-                <p className="text-center text-xs text-muted-foreground/60">
-                    &copy; {currentYear} {siteConfig.fullName}. All rights reserved.
-                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground/60">
+                    <p>
+                        &copy; {currentYear} {siteConfig.fullName}. All rights reserved.
+                    </p>
+                    <p className="font-mono text-[11px]">
+                        Accept: text/markdown &middot; RFC 9110 Ready
+                    </p>
+                </div>
             </div>
         </footer>
     );

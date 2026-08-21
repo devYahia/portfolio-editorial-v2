@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getPostBySlug, getPostBySlugAndLang, hasArabicVersion, getAllSlugs } from "@/lib/blog";
-import { useMDXComponents } from "@/components/blog/MdxComponents";
+import { getMDXComponents } from "@/components/blog/MdxComponents";
 import { BlogPostClient } from "@/components/blog/BlogPostClient";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -85,7 +85,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         notFound();
     }
 
-    const components = useMDXComponents();
+    const components = getMDXComponents();
     const hasArabic = hasArabicVersion(slug);
 
     // Pre-render English content

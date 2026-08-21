@@ -19,6 +19,7 @@ export function Navbar() {
   });
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    setMenuOpen(false);
     const hashIndex = href.indexOf('#');
     if (hashIndex === -1) return;
 
@@ -35,8 +36,6 @@ export function Navbar() {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
-
-    setMenuOpen(false);
   };
 
   return (

@@ -3,6 +3,7 @@
 import { motion, useReducedMotion, useMotionValue, useSpring, useMotionTemplate } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { ParticlesBackground } from "@/components/animations/ParticlesBackground";
 
 export function HeroSection() {
@@ -127,12 +128,12 @@ export function HeroSection() {
                             >
                                 View Projects
                             </a>
-                            <a
+                            <Link
                                 href="/blog"
                                 className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-lg border border-white/10 text-muted-foreground hover:text-foreground hover:border-white/20 transition-all duration-200"
                             >
                                 Read Blog
-                            </a>
+                            </Link>
                         </motion.div>
                     </div>
                 </div>

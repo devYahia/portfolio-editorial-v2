@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { MDXComponents } from "mdx/types";
 
-export function useMDXComponents(): MDXComponents {
+export function getMDXComponents(): MDXComponents {
     return {
         h1: ({ children, ...props }) => (
             <h1

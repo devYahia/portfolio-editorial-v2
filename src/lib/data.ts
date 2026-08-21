@@ -2,7 +2,7 @@ import type { LucideIcon } from "lucide-react";
 import type { IconType } from "react-icons";
 import {
     SiJavascript, SiTypescript, SiPython, SiNodedotjs, SiExpress,
-    SiFastapi, SiPostgresql, SiMongodb, SiRedis, SiPrisma, SiSqlalchemy,
+    SiFastapi, SiPostgresql, SiMongodb, SiRedis, SiPrisma,
     SiDocker, SiGit, SiSupabase, SiVercel, SiGooglecloud
 } from "react-icons/si";
 import {
@@ -10,10 +10,8 @@ import {
     Linkedin,
     Twitter,
     Mail,
-    Code2,
     Database,
     Cloud,
-    Link2,
     Blocks,
 } from "lucide-react";
 

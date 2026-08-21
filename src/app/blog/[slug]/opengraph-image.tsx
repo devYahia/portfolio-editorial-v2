@@ -228,7 +228,6 @@ export default async function Image(props: { params: Promise<{ slug: string }> }
                             }}
                         >
                             {/* Profile photo */}
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 src="https://github.com/devYahia.png"
                                 alt=""

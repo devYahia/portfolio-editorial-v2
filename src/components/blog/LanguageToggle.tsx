@@ -3,11 +3,11 @@
 import { useState } from "react";
 
 interface LanguageToggleProps {
-    slug: string;
+    slug?: string;
     onLanguageChange: (content: string, lang: string) => void;
 }
 
-export function LanguageToggle({ slug: _slug, onLanguageChange }: LanguageToggleProps) {
+export function LanguageToggle({ onLanguageChange }: LanguageToggleProps) {
     const [activeLang, setActiveLang] = useState<"en" | "ar">("en");
 
     const switchLanguage = (lang: "en" | "ar") => {
