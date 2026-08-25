@@ -59,7 +59,7 @@ export function JsonLd({ type = "website", article, project }: JsonLdProps) {
         knowsAbout: siteConfig.expertise,
         alumniOf: {
             "@type": "CollegeOrUniversity",
-            name: "Menoufia University",
+            name: "Mansoura University",
             department: "Communication and Computer Engineering",
         },
         hasOccupation: {

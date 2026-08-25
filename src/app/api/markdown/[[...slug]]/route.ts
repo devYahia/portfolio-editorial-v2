@@ -103,7 +103,7 @@ function getAboutMarkdown(): string {
 
 Yahia Mohamed Zakaria Youssef (also known as Yahia Zakaria or devYahia) is a Backend-Heavy Software Engineer who specializes in architecting and deploying resilient, scalable production backends, payment systems, and containerized cloud workloads.
 
-He is currently finalizing his Bachelor of Science in Communication and Computer Engineering at Menoufia University, Egypt.
+He is currently finalizing his Bachelor of Science in Communication and Computer Engineering at Mansoura University, Egypt.
 
 ## Core Architectural Competencies
 
@@ -121,7 +121,7 @@ He is currently finalizing his Bachelor of Science in Communication and Computer
 
 ## Education & Recognition
 
-- **B.Sc. Communication & Computer Engineering**: Menoufia University, Faculty of Electronic Engineering
+- **B.Sc. Communication & Computer Engineering**: Mansoura University
 - **GDG Hackathon 2024**: Ranked 14th of 122 teams
 - **Graduation Project Evaluation**: 99/100 (A+ Distinction)
 
