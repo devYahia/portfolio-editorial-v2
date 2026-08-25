@@ -38,7 +38,7 @@ export default function GlobalRedHero() {
             scalable <span className="font-bold text-white">systems</span>
           </h1>
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 w-full sm:w-auto">
-            <a href="mailto:mrzak051@gmail.com" className="bg-white text-black font-semibold px-6 sm:px-10 py-3.5 sm:py-4 rounded-xl hover:bg-neutral-200 transition-colors text-sm tracking-wide inline-flex items-center justify-center w-full sm:w-auto">
+            <a href="mailto:devyahiazakaria@gmail.com" className="bg-white text-black font-semibold px-6 sm:px-10 py-3.5 sm:py-4 rounded-xl hover:bg-neutral-200 transition-colors text-sm tracking-wide inline-flex items-center justify-center w-full sm:w-auto">
               Let&apos;s Talk
             </a>
             <a href="/Yahia-Zakaria-Resume.pdf" download="Yahia-Zakaria-Resume.pdf" className="bg-[#111111]/50 text-white border border-white/20 font-semibold px-6 sm:px-10 py-3.5 sm:py-4 rounded-xl hover:bg-white/5 transition-colors flex items-center justify-center gap-3 text-sm tracking-wide backdrop-blur-sm w-full sm:w-auto">

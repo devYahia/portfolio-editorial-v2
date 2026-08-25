@@ -37,16 +37,16 @@ export default function BlogPage() {
             <JsonLd type="blog" />
             <ScrollProgress />
             <Navbar />
-            <main className="min-h-screen pt-32 pb-24">
+            <main className="min-h-screen bg-[#09090b] text-zinc-100 selection:bg-red-900/50 pt-32 pb-24">
                 <div className="mx-auto max-w-4xl px-6">
                     <div className="mb-12">
-                        <p className="font-mono text-sm text-muted-foreground tracking-widest uppercase mb-3">
+                        <p className="font-mono text-sm text-red-400 tracking-widest uppercase mb-3">
                             Blog
                         </p>
-                        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-4">
                             Writings & Deep Dives
                         </h1>
-                        <p className="text-muted-foreground max-w-lg">
+                        <p className="text-zinc-400 text-lg max-w-2xl leading-relaxed">
                             Technical articles, project retrospectives, and lessons learned
                             from building in Fintech and Blockchain.
                         </p>
@@ -59,8 +59,8 @@ export default function BlogPage() {
                             ))}
                         </div>
                     ) : (
-                        <div className="glass-card rounded-xl p-12 text-center">
-                            <p className="text-muted-foreground">
+                        <div className="p-12 rounded-2xl bg-zinc-900/30 border border-zinc-800/60 text-center">
+                            <p className="text-zinc-400">
                                 No posts yet. Check back soon!
                             </p>
                         </div>

@@ -87,7 +87,7 @@ const channels = [
 const guidelines = [
   {
     title: "Full-Time & Contract Roles",
-    text: "Open to remote backend software engineering roles (Python, Node.js, TypeScript, Go). Please include team size, tech stack, and role responsibilities.",
+    text: "Open to remote backend software engineering roles (Node.js, TypeScript). Please include team size, tech stack, and role responsibilities.",
   },
   {
     title: "System Architecture Consulting",

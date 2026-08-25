@@ -127,12 +127,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             />
             <ScrollProgress />
             <Navbar />
-            <main className="min-h-screen pt-32 pb-24">
+            <main className="min-h-screen bg-[#09090b] text-zinc-100 selection:bg-red-900/50 pt-32 pb-24">
                 <article className="mx-auto max-w-3xl px-6">
                     {/* Back link */}
                     <Link
                         href="/blog"
-                        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
+                        className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors mb-8"
                     >
                         <ArrowLeft size={14} />
                         Back to Blog
@@ -146,7 +146,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                                 {post.meta.tags.map((tag) => (
                                     <span
                                         key={tag}
-                                        className="px-2 py-0.5 text-[10px] font-mono text-muted-foreground/70 bg-white/[0.03] border border-white/[0.06] rounded-md uppercase tracking-wider"
+                                        className="px-2 py-0.5 text-[10px] font-mono text-zinc-400 bg-zinc-800 border border-zinc-700 rounded-md uppercase tracking-wider"
                                     >
                                         {tag}
                                     </span>
@@ -158,7 +158,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                             {post.meta.title}
                         </h1>
 
-                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                        <div className="flex items-center gap-4 text-sm text-zinc-400">
                             <span className="flex items-center gap-1.5">
                                 <Calendar size={14} />
                                 {new Date(post.meta.date).toLocaleDateString("en-US", {

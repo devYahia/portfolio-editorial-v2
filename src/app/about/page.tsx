@@ -170,7 +170,7 @@ export default function AboutPage() {
                   </div>
                   <div className="flex items-start justify-between gap-2 pb-2 border-b border-zinc-800">
                     <span className="text-zinc-500">Core Stack</span>
-                    <span className="font-medium text-zinc-200 text-right">Python, TypeScript, Go</span>
+                    <span className="font-medium text-zinc-200 text-right">Node.js, TypeScript</span>
                   </div>
                   <div className="flex items-start justify-between gap-2">
                     <span className="text-zinc-500">Status</span>

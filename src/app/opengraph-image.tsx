@@ -70,7 +70,7 @@ export default function Image() {
                             YZ
                         </div>
                         <span style={{ display: "flex", fontSize: 22, color: "#a1a1aa", fontWeight: 600 }}>
-                            devyahia.me
+                            yahia.website
                         </span>
                     </div>
 
@@ -107,7 +107,7 @@ export default function Image() {
                         }}
                     >
                         <span>Egypt · Open to roles and freelance work</span>
-                        <span>FastAPI · NestJS · PostgreSQL · Docker · TON</span>
+                        <span>Node.js · TypeScript · PostgreSQL · Docker · TON</span>
                     </div>
                 </div>
             </div>
