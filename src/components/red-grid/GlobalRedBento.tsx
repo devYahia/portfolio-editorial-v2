@@ -2,12 +2,12 @@
 import { motion } from 'framer-motion';
 
 const techGroups = [
-  { label: 'Languages', value: 'TypeScript, Python, JavaScript, SQL, Dart' },
-  { label: 'Backend & APIs', value: 'NestJS, Express, FastAPI, Prisma, BullMQ, REST, Webhooks' },
+  { label: 'Languages', value: 'TypeScript, JavaScript, SQL' },
+  { label: 'Backend & APIs', value: 'Express, NestJS, FastAPI, Prisma, REST, Webhooks' },
   { label: 'Data & Storage', value: 'PostgreSQL, MongoDB, Redis, Supabase, Cloudflare R2, AWS S3' },
   { label: 'Cloud & DevOps', value: 'Docker, GCP, Coolify, Vercel, Nginx, GHCR, Caddy' },
   { label: 'Blockchain & Fintech', value: 'TON SDK, USDT Jettons, wallet integrations' },
-  { label: 'AI, Frontend & More', value: 'Gemini AI, Next.js, React, Unity, Flutter, Telegram Bots & Mini Apps' },
+  { label: 'AI, Frontend & More', value: 'AI Integration, Next.js, React, Unity, Flutter, Telegram Bots & Mini Apps' },
 ];
 
 const valuePoints = [
