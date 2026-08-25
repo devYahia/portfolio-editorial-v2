@@ -15,9 +15,10 @@ export default function GlobalRedProjects() {
   });
 
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 90,
-    damping: 28,
-    restDelta: 0.001,
+    stiffness: 40,
+    damping: 15,
+    mass: 1.2,
+    restDelta: 0.0005,
   });
 
   const lineScale = useTransform(smoothProgress, [0, 1], [0, 1]);
@@ -91,16 +92,18 @@ export default function GlobalRedProjects() {
                 className={`relative z-10 flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-16 w-full ${isEven ? 'md:flex-row-reverse' : ''}`}
               >
                 <motion.div
-                  initial={{ scale: 0.6, opacity: 0.4 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true, margin: '-60px' }}
-                  transition={{ type: 'spring', stiffness: 260, damping: 18 }}
-                  className="absolute left-[23px] sm:left-[39px] md:left-1/2 top-8 sm:top-10 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#09090b] border-2 border-red-500/70 rounded-full -translate-x-1/2 z-20 group-hover:border-red-400"
+                  initial={{ borderColor: 'rgba(255,255,255,0.1)', backgroundColor: '#09090b', scale: 0.8, boxShadow: '0 0 10px rgba(239,68,68,0)' }}
+                  whileInView={{ borderColor: 'rgba(239,68,68,0.9)', backgroundColor: 'rgba(239,68,68,1)', scale: 1, boxShadow: '0 0 15px rgba(239,68,68,0.8)' }}
+                  viewport={{ once: false, margin: '-45% 0px -45% 0px' }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                  className="absolute left-[23px] sm:left-[39px] md:left-1/2 top-8 sm:top-10 w-2.5 h-2.5 sm:w-3 sm:h-3 border-2 rounded-full -translate-x-1/2 z-20"
                 >
                   <motion.span
-                    className="absolute inset-0 rounded-full bg-red-500/30"
-                    animate={{ scale: [1, 1.8, 1], opacity: [0.6, 0, 0.6] }}
-                    transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut', delay: i * 0.3 }}
+                    className="absolute inset-0 rounded-full bg-red-500"
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: [0.6, 0], scale: [1, 2.5] }}
+                    viewport={{ once: false, margin: '-45% 0px -45% 0px' }}
+                    transition={{ duration: 2, repeat: Infinity, ease: 'easeOut' }}
                   />
                 </motion.div>
 

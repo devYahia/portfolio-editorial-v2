@@ -69,20 +69,67 @@ export default function GlobalRedBento() {
             <div className="absolute top-0 right-0 w-[280px] sm:w-[400px] lg:w-[500px] h-[280px] sm:h-[400px] lg:h-[500px] bg-red-600/10 rounded-full blur-[80px] sm:blur-[100px] pointer-events-none translate-x-1/3 -translate-y-1/3 group-hover:bg-red-600/15 transition-colors duration-1000" />
 
             <div className="relative z-10 space-y-5 sm:space-y-6">
-              <h3 className="text-2xl sm:text-3xl font-serif text-white mb-6">Brief Overview</h3>
+              <h3 className="text-2xl sm:text-3xl font-serif text-white">Profile Overview</h3>
 
-              <p className="text-white/60 text-[15px] sm:text-base md:text-lg leading-relaxed font-light mb-6">
+              <p className="text-white/60 text-[15px] sm:text-base md:text-lg leading-relaxed font-light">
                 I am a{' '}
                 <span className="text-white font-medium">Backend-Heavy Software Engineer</span>{' '}
-                focused on building resilient, scalable systems for complex business needs. From 
-                payment pipelines to queue-driven APIs and self-hosted infrastructure, I prioritize 
-                correctness, performance, and long-term maintainability.
+                dedicated to architecting resilient, scalable solutions for complex business needs -
+                from payment pipelines and queue-driven APIs to self-hosted infrastructure that stays
+                reliable under real traffic.
+              </p>
+              <p className="text-white/60 text-[15px] sm:text-base md:text-lg leading-relaxed font-light">
+                Rather than being limited to a single domain, my core strength lies in rapidly adapting to
+                diverse technical environments and translating abstract business requirements into robust
+                system architectures. Whether it&apos;s optimizing database queries, orchestrating
+                containerized infrastructure, or building secure APIs, my focus is always on delivering
+                high-performance, maintainable software from the ground up.
               </p>
 
-              <div className="pt-2">
-                <a href="/about" className="inline-flex items-center gap-2 text-sm font-medium text-red-400 hover:text-red-300 transition-colors">
-                  Read Full Engineering Dossier <span aria-hidden="true">&rarr;</span>
-                </a>
+              <div className="pt-4 sm:pt-5 border-t border-white/5 space-y-3 sm:space-y-4">
+                <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.18em] sm:tracking-[0.2em] uppercase text-red-500/60">
+                  What I Ship
+                </p>
+                <ul className="space-y-3 sm:space-y-3.5">
+                  <li className="flex gap-3 items-start">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2 shrink-0 shadow-[0_0_8px_rgba(239,68,68,0.8)]" />
+                    <p className="text-white/70 text-[15px] sm:text-base leading-relaxed font-light">
+                      <span className="text-white font-medium">Fintech & payment systems</span> - wallet
+                      ledgers, webhook reconciliation, idempotent money flows, and admin tooling for live
+                      ops.
+                    </p>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/30 mt-2 shrink-0" />
+                    <p className="text-white/70 text-[15px] sm:text-base leading-relaxed font-light">
+                      <span className="text-white font-medium">Infrastructure-heavy backends</span> -
+                      on-demand Docker workloads, registry-based deployments, reverse proxies, and
+                      self-hosted VPS stacks via Coolify.
+                    </p>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/30 mt-2 shrink-0" />
+                    <p className="text-white/70 text-[15px] sm:text-base leading-relaxed font-light">
+                      <span className="text-white font-medium">Full-stack product delivery</span> - REST
+                      APIs, admin dashboards, Telegram bots, Mini Apps, and client-facing apps built to
+                      ship and stay maintainable.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="pt-4 sm:pt-5 border-t border-white/5">
+                <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.18em] sm:tracking-[0.2em] uppercase text-red-500/60 mb-2">
+                  Education
+                </p>
+                <p className="text-white/70 text-[15px] sm:text-base leading-relaxed font-light">
+                  Finalizing my{' '}
+                  <span className="text-white font-medium">
+                    B.Sc. in Communication and Computer Engineering
+                  </span>
+                  . Grounded in systems thinking - algorithms, network protocols, and low-level behavior -
+                  so what I ship stays fast and reliable under real load.
+                </p>
               </div>
             </div>
           </motion.div>

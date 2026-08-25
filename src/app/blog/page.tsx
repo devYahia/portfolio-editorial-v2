@@ -37,7 +37,18 @@ export default function BlogPage() {
             <JsonLd type="blog" />
             <ScrollProgress />
             <Navbar />
-            <main className="min-h-screen bg-[#09090b] text-zinc-100 selection:bg-red-900/50 pt-32 pb-24">
+            <main className="relative min-h-screen bg-[#09090b] text-zinc-100 selection:bg-red-900/50 pt-32 pb-24 overflow-hidden">
+                {/* Background Effects (Red Theme) */}
+                <div
+                    className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                    style={{
+                        backgroundImage:
+                            'linear-gradient(#ef4444 1px, transparent 1px), linear-gradient(90deg, #ef4444 1px, transparent 1px)',
+                        backgroundSize: '40px 40px',
+                    }}
+                />
+                <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#09090b] to-transparent pointer-events-none z-[1]" />
+                <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[min(80vw,700px)] h-[min(80vw,700px)] bg-red-600/[0.05] rounded-full blur-[100px] pointer-events-none" />
                 <div className="mx-auto max-w-4xl px-6">
                     <div className="mb-12">
                         <p className="font-mono text-sm text-red-400 tracking-widest uppercase mb-3">
