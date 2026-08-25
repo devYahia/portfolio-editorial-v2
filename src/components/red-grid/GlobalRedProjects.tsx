@@ -94,7 +94,7 @@ export default function GlobalRedProjects() {
                 <motion.div
                   initial={{ borderColor: 'rgba(255,255,255,0.1)', backgroundColor: '#09090b', scale: 0.8, boxShadow: '0 0 10px rgba(239,68,68,0)' }}
                   whileInView={{ borderColor: 'rgba(239,68,68,0.9)', backgroundColor: 'rgba(239,68,68,1)', scale: 1, boxShadow: '0 0 15px rgba(239,68,68,0.8)' }}
-                  viewport={{ once: false, margin: '-45% 0px -45% 0px' }}
+                  viewport={{ once: false, margin: '2000px 0px -45% 0px' }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                   className="absolute left-[23px] sm:left-[39px] md:left-1/2 top-8 sm:top-10 w-2.5 h-2.5 sm:w-3 sm:h-3 border-2 rounded-full -translate-x-1/2 z-20"
                 >
@@ -102,7 +102,7 @@ export default function GlobalRedProjects() {
                     className="absolute inset-0 rounded-full bg-red-500"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: [0.6, 0], scale: [1, 2.5] }}
-                    viewport={{ once: false, margin: '-45% 0px -45% 0px' }}
+                    viewport={{ once: false, margin: '2000px 0px -45% 0px' }}
                     transition={{ duration: 2, repeat: Infinity, ease: 'easeOut' }}
                   />
                 </motion.div>
