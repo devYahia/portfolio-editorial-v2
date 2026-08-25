@@ -24,7 +24,7 @@ const recoveryLinks = [
   {
     title: "About Yahia",
     description: "Learn about background, philosophy, and engineering track record.",
-    href: "/about",
+    href: "/#why-partner",
     icon: Compass,
   },
   {

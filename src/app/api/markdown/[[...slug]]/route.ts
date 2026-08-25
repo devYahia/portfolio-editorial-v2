@@ -19,7 +19,7 @@ The requested resource \`${path}\` was not found on ${siteConfig.url}.
 If you are an AI agent or crawler, you can recover by exploring the following indexes:
 
 - **Homepage**: ${siteConfig.url}/
-- **About**: ${siteConfig.url}/about
+- **About**: ${siteConfig.url}/#why-partner
 - **Contact**: ${siteConfig.url}/contact
 - **Privacy Policy**: ${siteConfig.url}/privacy
 - **Projects Index**: ${siteConfig.url}/#projects
@@ -46,7 +46,7 @@ ${siteConfig.description}
 
 ## Verified Trust Anchor Pages
 
-- **About**: ${siteConfig.url}/about
+- **About**: ${siteConfig.url}/#why-partner
 - **Contact**: ${siteConfig.url}/contact
 - **Privacy Policy**: ${siteConfig.url}/privacy
 - **Blog**: ${siteConfig.url}/blog

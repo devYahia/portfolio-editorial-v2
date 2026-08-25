@@ -61,7 +61,7 @@ export function Footer() {
                         </p>
                         <ul className="space-y-2">
                             <li>
-                                <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                                <Link href="/#why-partner" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                                     About Yahia
                                 </Link>
                             </li>
